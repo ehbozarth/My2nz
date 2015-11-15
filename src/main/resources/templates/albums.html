@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Albums</title>
+</head>
+<body>
+{{^userName}}
+<a href="/logout">Logout</a>
+<br>
+<br>
+<form action="add-album" method="post">
+    <input type="hidden" name="artistId" value="{{artistId}}"/>
+    <input type="text" placeholder="Add New Album" name="albumName"/>
+    <input type="text" placeholder="Add Album Image Here" name="albumImage"/>
+    <input type="text" placeholder="Add Album Link Here" name="albumLink"/>
+    <button type="submit">Add Album</button>
+</form>
+{{/userName}}
+<br>
+<br>
+{{#albums}}
+{{albumName}} - {{albumImage}} - <a href="{{albumLink}}">Listen Here!</a><br>
+{{/albums}}
+
+
+</body>
+</html>

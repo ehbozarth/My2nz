@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Artists</title>
+</head>
+<body>
+{{^userName}}
+<a href="/logout">Logout</a>
+<br>
+<br>
+<form action="add-artist" method="post">
+    <input type="hidden" name="genreId" value="{{genreId}}"/>
+    <input type="text" placeholder="Add New Artist" name="artistName"/>
+    <input type="text" placeholder="Add Artist Image Here" name="artistImage"/>
+    <input type="text" placeholder="Add Artist Link Here" name="artistLink"/>
+    <button type="submit">Add Artist</button>
+</form>
+{{/userName}}
+<br>
+<br>
+{{#artists}}
+<a href="/albums?artistId={{id}}">{{artistName}}</a> - {{artistImage}} - <a href="http://{{artistLink}}">{{artistLink}}</a>
+<br>
+<a href="/editg-artist?artistId={{id}}">Edit {{artistName}}</a><br>
+<a href="/delete-artist?artistId={{id}}">Delete {{artistName}}</a>
+<br><br>
+{{/artists}}
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Artist</title>
+</head>
+<body>
+
+{{^userName}}
+<a href="/logout">Logout</a>
+<br>
+<br>
+<form action="editp-artist" method="post">
+    <input type="hidden" name="artistId" value="{{artistId}}"/>
+    <input type="text" placeholder="Add New Artist" name="artistName"/>
+    <input type="text" placeholder="Add Artist Image Here" name="artistImage"/>
+    <input type="text" placeholder="Add Artist Link Here" name="artistLink"/>
+    <button type="submit">Edit Artist</button>
+</form>
+{{/userName}}
+
+</body>
+</html>

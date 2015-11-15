@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+{{^userName}}
+<a href="/logout">Logout</a>
+<br>
+<br>
+<form action="add-genre" method="post">
+    <input type="text" placeholder="Add New Genre" name="genreName"/>
+    <input type="text" placeholder="Add Genre Image Here" name="genreImage"/>
+    <button type="submit">Add Genre</button>
+</form>
+{{/userName}}
+<br>
+<br>
+{{#genres}}
+<a href="/artists?genreId={{id}}">{{genreName}}</a> - {{genreImage}}<br>
+{{/genres}}
+
+
+
+<br>
+<br>
+<br>
+
+</body>
+</html>
